@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sign Up 05</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="/static/reg/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+{#					<h2 class="heading-section">Sign Up #05</h2>#}
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+		      	<h3 class="mb-4">Sign Up</h3>
+						<form action="/myapp/doctor_doctor_post/" class="signup-form" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+		      		<div class="form-group">
+		      			<label class="label" for="name">Full Name</label>
+		      			<input type="text" class="form-control" required name="textfield">
+		      		</div>
+		      		<div class="form-group">
+		      			<label class="label" for="email">Email Address</label>
+		      			<input type="email" class="form-control" required name="textfield2" >
+		      		</div>
+                            <div class="form-group">
+		      			<label class="label" for="email">Phone</label>
+		      			<input type="text" class="form-control"  required pattern="[0-9]{10}" name="textfield3">
+		      		</div>
+                            <div class="form-group">
+		      			<label class="label" for="email">Photo</label>
+		      			<input type="file" class="form-control" required name="fileField" >
+		      		</div>
+
+                            <div class="form-group">
+		      			<label class="label" for="email">Qualification</label>
+                                <select name="select" id="select" required>
+                                          <option value="">Select</option>
+
+      <option value="MBBS">MBBS</option>
+      <option value="MD">MD</option>
+      <option value="MS">MS</option>
+      </select>
+		      		</div>
+                            <div class="form-group">
+		      			<label class="label" for="email">Department</label>
+                                <select name="select2" id="select2">
+                                    <option value="MBBS">Select</option>
+          <option value="Cardiologists">Cardiologists</option>
+          <option value="Neurologist">Neurologist</option>
+          <option value="Pediatrics">Pediatrics </option>
+          <option value="Emergency medicine">Emergency medicine </option>
+          <option value="psychology">psychology </option>
+      </select>
+		      		</div>
+
+                             <div class="form-group">
+		      			<label class="label" for="email">Gender</label>
+                                 <input type="radio" value="male" name="gender" checked>MALE<br>
+                                 <input type="radio" value="female" name="gender">FEMALE<br>
+                                 <input type="radio" value="prefernottosay" name="gender">PREFER NOT TO SAY
+
+		      		</div>
+                            <div class="form-group">
+		      			<label class="label" >DOB</label>
+		      			<input type="date" class="form-control" required name="textfield8" >
+		      		</div>
+
+                            <div class="form-group">
+		      			<label class="label" for="email">Place</label>
+		      			<input type="text" class="form-control" required name="textfield4">
+		      		</div>
+
+
+                             <div class="form-group">
+		      			<label class="label" for="email">City</label>
+		      			<input type="text" class="form-control" required name="City">
+		      		</div>
+
+
+
+                             <div class="form-group">
+		      			<label class="label" for="email">State</label>
+		      			<input type="text" class="form-control" required name="textfield6" >
+		      		</div>
+
+
+                            <div class="form-group">
+		      			<label class="label" for="email">Pincode</label>
+		      			<input type="text" class="form-control" required PATTERN="[0-9]{6}" name="textfield7" >
+		      		</div>
+
+
+
+
+	            <div class="form-group">
+	            	<label class="label" for="password">Password</label>
+	              <input id="password-field" type="password" class="form-control" required name="textfield9">
+	            </div>
+	            <div class="form-group">
+	            	<label class="label" for="password">Confirm Password</label>
+	              <input id="password-field" type="password" class="form-control" required name="textfield10">
+	            </div>
+	            <div class="form-group d-flex justify-content-end mt-5">
+	            	<button type="submit" class="btn btn-primary submit"><span class="fa fa-paper-plane"></span></button>
+	            </div>
+	          </form>
+	          <p class="text-center">Already have an account? <a href="/myapp/login/">Sign In</a></p>
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="/static/reg/js/jquery.min.js"></script>
+  <script src="/static/reg/js/popper.js"></script>
+  <script src="/static/reg/js/bootstrap.min.js"></script>
+  <script src="/static/reg/js/main.js"></script>
+
+	</body>
+</html>
+

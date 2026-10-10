@@ -1,0 +1,41 @@
+{% extends "admin/homeindex.html" %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/admin_viewrejecteddoctor_post/">
+{% csrf_token %}
+<input type="text" name="textfield" id="textfield"  />
+<input type="submit" name="button" id="button" value="Search" class="btn btn-success"  />
+  <label for="textfield"></label>
+<table class="table table-bordered">
+  <tr>
+    <th width="47">S/no</th>
+    <th width="58">Name</th>
+    <th width="64">E-mail</th>
+    <th width="83">Phone n/o</th>
+    <th width="44">photo</th>
+    <th width="103">Qualification</th>
+    <th width="91">Department</th>
+    <th width="64">Gender</th>
+    <th width="41">DOB</th>
+      <th width="66">Address</th>
+
+  </tr>
+    {% for i in data %}
+  <tr>
+   <td height="182">{{ forloop.counter }}</td>
+    <td>{{ i.Name }}</td>
+    <td>{{ i.Email }}</td>
+    <td>{{ i.Phone }}</td>
+    <td><img src="{{ i.Photo }}" height="100px "width="100px"></td><td>{{ i.Qualification  }}</td>
+    <td>{{ i.Department }}&nbsp;</td>
+    <td>{{ i.Gender }}</td>
+    <td>{{ i.DOB }}</td>
+    <td>{{ i.Place }}<br>{{ i.City }}<br>{{ i.State }}<br>{{ i.Pincode }}</td>
+
+  </tr>
+    {% endfor %}
+</table>
+    </form>
+</body>
+{% endblock %}

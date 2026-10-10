@@ -1,0 +1,39 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/doctor_viewpatient_post/">
+{% csrf_token %}
+<input type="text" name="textfield" id="textfield" placeholder="Name" required />
+<input type="submit" name="button" id="button" value="Go" class="btn btn-success" />
+<table class="table table-bordered">
+  <tr>
+    <th width="36">S/no</th>
+    <th width="46">Name</th>
+    <th width="41">DOB</th>
+    <th width="58">Gender</th>
+    <th width="54">Email</th>
+    <th width="56">Photo</th>
+    <th width="82">Phone</th>
+    <th width="162">Address</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+
+    <td height="105">{{ forloop.counter }}&nbsp;</td>
+    <td>{{ i.Name }}
+        <a href="/myapp/chat1/{{ i.id }}" class="btn btn-link">Click to Chat</a>
+        &nbsp;</td>
+    <td>&nbsp;{{ i.DOB }}</td>
+    <td>&nbsp;{{ i.Gender }}</td>
+    <td>{{ i.Email }}&nbsp;</td>
+    <td><img src="{{ i.Photo }}"> </td>
+    <td>{{ i.Phone }}&nbsp;</td>
+    <td>{{ i.Place }}{{ i.City }}{{ i.Pincode }}{{ i.State }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+  <label for="textfield"></label>
+</form>
+</body>
+{% endblock %}

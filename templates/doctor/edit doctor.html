@@ -1,0 +1,85 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form2" name="form2" method="post" action="/myapp/doctor_editdoctor_post/">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ data.id }}">
+<table class="table table-bordered">
+  <tr>
+    <td width="112">Name</td>
+    <td width="196">
+      <input type="text" name="textfield" id="textfield" value="{{ data.Name }}" required/></td>
+  </tr>
+  <tr>
+    <td height="27">Email</td>
+    <td><input type="email" name="textfield2" id="textfield2"  value="{{ data.Email }}" required/></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><input type="text" name="textfield3" id="textfield3"  value="{{ data.Phone }}" required pattern="[0-9]{10}"/></td>
+  </tr>
+  <tr>
+    <td height="41">Photo</td><td>
+      <img src="{{ data.Photo }}" height="90" width="90">
+      <input type="file" name="fileField" id="fileField" required/></td>
+  </tr>
+  <tr>
+    <td height="59">Qualification</td>
+    <td><select name="select" id="select">
+      <option value="MBBS">MBBS</option>
+      <option value="MD">MD</option>
+      <option value="MS">MS</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td>Department</td>
+    <td>
+      <select name="select2" id="select2">
+          <option value="Cardiologists">Cardiologists</option>
+          <option value="Neurologist">Neurologist</option>
+          <option value="Pediatrics">Pediatrics </option>
+          <option value="Emergency medicine">Emergency medicine </option>
+          <option value="psychology">psychology </option>
+      </select></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><table width="200">
+        <tr>
+          <td><label>
+            <input type="radio" {% if data.Gender == 'Male' %} checked {% endif %} name="RadioGroup1" value="Male" id="RadioGroup1_0" />
+            Male</label></td>
+        </tr>
+        <tr>
+          <td><label>
+            <input type="radio" {% if data.Gender == 'Female' %} checked {% endif %} name="RadioGroup1" value="Female" id="RadioGroup1_1" />
+            Female</label></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td>DOB</td>
+    <td><input type="date" name="textfield8" id="textfield8" value="{{ data.DOB|date:'Y-m-d' }}" required/></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td><input type="text" name="textfield4" id="textfield4" value="{{ data.Place }}"required/></td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td><input type="text" name="textfield5" id="textfield5" value="{{ data.City }}" required/></td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td><input type="text" name="textfield6" id="textfield6" value="{{ data.Status }}"required /></td>
+  </tr>
+  <tr>
+    <td>Pincode</td>
+    <td><input type="text" name="textfield7" id="textfield7" value="{{ data.Pincode }}"required pattern="[0-9]{6}" /></td>
+  </tr>
+</table>
+<input type="submit" name="button" id="button" value="Submit" class="btn btn-success"/>
+     </form>
+</body>
+{% endblock %}

@@ -1,0 +1,86 @@
+
+from django.contrib import admin
+from django.urls import path, include
+
+from myapp import views
+
+urlpatterns = [
+    path('admin_changepassword/',views.admin_changepassword),
+    path('admin_changepassword_post/',views.admin_changepassword_post),
+    path('login/',views.login),
+    path('login_post/',views.login_post),
+    path('admin_sendreply/<id>',views.admin_sendreply),
+    path('admin_sendreply_post/',views.admin_sendreply_post),
+    path('admin_viewdoctor/',views.admin_viewdoctor),
+    path('admin_viewdoctor_post/',views.admin_viewdoctor_post),
+    path('approve_doctor/<id>',views.approve_doctor),
+    path('reject_doctor/<id>',views.reject_doctor),
+    path('admin_viewapproveddoctor/',views.admin_viewapproveddoctor),
+    path('admin_viewapproveddoctor_post/',views.admin_viewapproveddoctor_post),
+    path('admin_viewrejecteddoctor/',views.admin_viewrejecteddoctor),
+    path('admin_viewrejecteddoctor_post/',views.admin_viewrejecteddoctor_post),
+    path('admin_viewcomplaint/',views.admin_viewcomplaint),
+    path('admin_viewcomplaint_post/',views.admin_viewcomplaint_post),
+    path('admin_viewreview/',views.admin_viewreview),
+    path('admin_viewreview_post/',views.admin_viewreview_post),
+    path('admin_viewuser/',views.admin_viewuser),
+    path('admin_viewuser_post/',views.admin_viewuser_post),
+    path('doctor_changepassword/',views.doctor_changepassword),
+    path('doctor_changepassword_post/',views.doctor_changepassword_post),
+    path('doctor_doctor/',views.doctor_doctor),
+    path('doctor_doctor_post/',views.doctor_doctor_post),
+    path('doctor_editdoctor/<id>',views.doctor_editdoctor),
+    path('doctor_editdoctor_post/',views.doctor_editdoctor_post),
+    path('doctor_editschedule/<id>',views.doctor_editschedule),
+    path('doctor_editschedule_post/',views.doctor_editschedule_post),
+    path('doctor_manageschedule/',views.doctor_manageschedule),
+    path('doctor_manageschedule_post/',views.doctor_manageschedule_post),
+    path('doctor_viewbooking/<id>',views.doctor_viewbooking),
+    path('doctor_viewbooking_post/',views.doctor_viewbooking_post),
+    path('doctor_viewfall/',views.doctor_viewfall),
+    path('doctor_viewfall_post/',views.doctor_viewfall_post),
+    path('doctor_viewpatient/',views.doctor_viewpatient),
+    path('doctor_viewpatient_post/',views.doctor_viewpatient_post),
+    path('doctodoctor_viewprofile/',views.doctor_viewprofile),
+    path('doctor_viewprofile_post/',views.doctor_viewprofile_post),
+    path('doctor_viewschedule/',views.doctor_viewschedule),
+    path('doctor_viewschedule_post/',views.doctor_viewschedule_post),
+    path('admin_home/',views.admin_home),
+    path('doctor_home/',views.doctor_home),
+    path('logout/',views.logout),
+    path('delete_schedule/<id>',views.delete_schedule),
+    path('forget_password',views.forget_password),
+    path('forget_password_post',views.forget_password_post),
+
+
+#     ============== chat
+
+    path('chat1/<id>', views.chat1),
+    path('chat_view/', views.chat_view),
+    path('chat_send/<msg>', views.chat_send),
+    path('User_sendchat/', views.User_sendchat),
+    path('User_viewchat/', views.User_viewchat),
+
+#     ============== user
+
+    path('User_registration/',views.User_registration),
+    path('User_login/',views.User_login),
+    path('User_chagepassword/',views.User_chagepassword),
+    path('User_viewprofile/',views.User_viewprofile),
+    path('User_editprofile/',views.User_editprofile),
+    path('User_editpatient_get/',views.User_editpatient_get),
+    path('User_managepatient/',views.User_managepatient),
+    path('User_viewfallnotifiction/',views.User_viewfallnotifiction),
+    path('User_viewbooking/',views.User_viewbooking),
+    path('User_searchdoctor/',views.User_searchdoctor),
+    path('User_viewreply/',views.User_viewreply),
+    path('User_sendcomplaint/',views.User_sendcomplaint),
+    path('User_viewpatient/',views.User_viewpatient),
+    path('User_editpatient/',views.User_editpatient),
+    path('User_deletepatient/',views.User_deletepatient),
+    path('User_viewschedule/',views.User_viewschedule),
+    path('User_takeappointment/',views.User_takeappointment),
+    path('User_fall_notifiction/',views.User_fall_notifiction),
+    path('api_report_fall/',views.api_report_fall),
+]
+

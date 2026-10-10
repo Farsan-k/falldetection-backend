@@ -1,0 +1,36 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form2" name="form2" method="post" action="/myapp/doctor_manageschedule_post/">
+    {% csrf_token %}
+  <label for="textfield2"></label>
+  <label for="textfield"></label>
+<table class="table table-bordered">
+  <tr>
+    <td width="139">Date</td>
+    <td width="164">
+      <label for="textfield3"></label>
+      <input type="date" name="textfield" id="textfield3" required/></td>
+  </tr>
+  <tr>
+    <td>From time</td>
+    <td>
+      <label for="textfield4"></label>
+      <input type="time" name="textfield2" id="textfield4" required /></td>
+  </tr>
+  <tr>
+    <td>To time</td>
+    <td>
+      <label for="textfield5"></label>
+      <input type="time" name="textfield3" id="textfield5"  required/></td>
+  </tr>
+    <tr>
+        <td></td>
+        <td>  <input type="submit" name="button" id="button" value="Submit"  class="btn btn-success" />
+</td>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}

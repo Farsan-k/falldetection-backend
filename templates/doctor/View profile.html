@@ -1,0 +1,53 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="">
+
+
+<table class="table table-bordered">
+  <tr>
+    <th width="252">Name</th>
+    <td width="214">&nbsp;{{ data.Name }}</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>{{ data.Email }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>Phone</th>
+    <td>{{ data.Phone }}&nbsp;</td>
+  </tr>
+    <tr>
+        <th>Photo</th>
+    <td><img src="{{ data.Photo }}" width="90" height="90"></td>
+    </tr>
+  <tr>
+    <th>Qualification</th>
+    <td>{{ data.Qualification }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>Department</th>
+    <td>{{ data.Department }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>Gender</th>
+    <td>{{ data.Gender }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>DOB</th>
+    <td>{{ data.DOB }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th height="117">Address</th>
+    <td>{{ data.Place }}<br>{{ data.City }}<br>{{ data.State }}<br>{{ data.Pincode }}&nbsp;</td>
+  </tr>
+  <tr>
+    <td></td>
+      <td><a href="/myapp/doctor_editdoctor/{{ data.id }}" class="btn btn-success">Edit</a></td>
+  </tr>
+</table>
+</form>
+</body>
+
+{% endblock %}
